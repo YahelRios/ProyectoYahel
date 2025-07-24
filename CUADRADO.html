@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CUADRADO</title>
+</head>
+<body>
+  <h1 id="titulo">SACAR AREA Y PERIMETRO DE UN CUADRADO</h1>
+
+  <!-- Entrada para el lado -->
+  <input id="lado" type="text" placeholder="Escribe el valor del lado bro" value="">
+
+  <!-- Selector para elegir qué calcular -->
+  <select id="opcion">
+    <option value="area">AREA</option>
+    <option value="perimetro">PERIMETRO</option>
+  </select>
+
+  <!-- Botón para ejecutar -->
+  <input type="button" onclick="calcular()" value="Calcular">
+
+  <script>
+    function calcular() {
+      let lado = parseFloat(document.querySelector("#lado").value);
+      let opcion = document.querySelector("#opcion").value;
+
+      if (opcion === "area") {
+        let area = lado * lado;
+        alert(`si bro ira, el area es ${area.toFixed(2)} cm²`);
+        alert(`Viste bro, así se saca el area`);
+      } else if (opcion === "perimetro") {
+        let perimetro = 4 * lado;
+        alert(`Si bro ira, el perimetro es ${perimetro.toFixed(2)} cm`);
+        alert(`viste bro, así se saca el perimetro`);
+      } else {
+        alert("Selecciona una opción válida");
+      }
+    }
+  </script>
+</body>
+</html>

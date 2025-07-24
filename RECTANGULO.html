@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RECTANGULO</title>
+</head>
+<body>
+  <h1 id="titulo">SACAR AREA Y PERIMETRO DE UN RECTANGULO</h1>
+ 
+  <!-- Entrada para la base -->
+  <input id="base" type="text" placeholder="Escribe la base bro" value="">
+  <!-- Entrada para la altura -->
+  <input id="altura" type="text" placeholder="Escribe la altura bro" value="">
+ 
+  <!-- Selector para elegir que calcular -->
+  <select id="opcion">
+    <option value="area">AREA</option>
+    <option value="perimetro">PERIMETRO</option>
+  </select>
+ 
+  <!-- Boton para ejecutar -->
+  <input type="button" onclick="calcular()" value="Calcular">
+ 
+  <script>
+    function calcular() {
+      let base = parseFloat(document.querySelector("#base").value);
+      let altura = parseFloat(document.querySelector("#altura").value);
+      let opcion = document.querySelector("#opcion").value;
+ 
+      if (opcion === "area") {
+        let area = base * altura;
+        alert(`si bro ira, el area es ${area.toFixed(2)} cm2`);
+        alert(`viste bro asi se saca el area`);
+      } else if (opcion === "perimetro") {
+        let perimetro = 2 * (base + altura);
+        alert(`si bro ira, el perimetro es ${perimetro.toFixed(2)} cm`);
+        alert(`viste bro asi se saca el perimetro`);
+      } else {
+        alert("Selecciona una opcion valida");
+      }
+    }
+  </script>
+</body>
+</html>
