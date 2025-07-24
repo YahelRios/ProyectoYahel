@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edades y Mayoría de Edad</title>
+</head>
+<body>
+  <h1>Comprobador de edades</h1>
+ 
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" /><br /><br />
+ 
+  <label for="edad1">Dame tu primera edad:</label>
+  <input type="number" id="edad1" /><br /><br />
+ 
+  <label for="edad2">Dame tu segunda edad:</label>
+  <input type="number" id="edad2" /><br /><br />
+ 
+  <button onclick="procesarEdades()">Procesar</button>
+ 
+  <h2 id="resultado"></h2>
+  <h3 id="mayoria"></h3>
+ 
+  <script>
+    function getEdad(nombre, edad) {
+      if (edad >= 18) {
+        return nombre + ', eres mayor de edad';
+      } else {
+        return nombre + ', eres menor de edad';
+      }
+    }
+ 
+    function procesarEdades() {
+      const nombre = document.getElementById('nombre').value || 'Persona';
+      const edad1 = parseInt(document.getElementById('edad1').value) || 0;
+      const edad2 = parseInt(document.getElementById('edad2').value) || 0;
+ 
+      const suma = edad1 + edad2;
+ 
+      document.getElementById('resultado').textContent = nombre + ', tienes ' + suma + ' años (sumados)';
+      document.getElementById('mayoria').textContent = getEdad(nombre, suma);
+    }
+  </script>
+</body>
+</html>
+
+
+
