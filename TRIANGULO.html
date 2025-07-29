@@ -1,50 +1,34 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>TRIANGULO</title>
-</head>
-<body>
-  <h1 id="titulo">SACAR AREA, PERIMETRO Y HIPOTENUSA DE UN TRIANGULO</h1>
- 
-  <!-- Entrada para cateto 1 (base) -->
-  <input id="base" type="text" placeholder="Escribe la base bro" value="">
-  <!-- Entrada para cateto 2 (altura) -->
-  <input id="altura" type="text" placeholder="Escribe la altura bro" value="">
- 
-  <!-- Selector para elegir que calcular -->
-  <select id="opcion">
-    <option value="area">AREA</option>
-    <option value="perimetro">PERIMETRO</option>
-    <option value="hipotenusa">HIPOTENUSA</option>
-  </select>
- 
-  <!-- Boton para ejecutar -->
-  <input type="button" onclick="calcular()" value="Calcular">
- 
-  <script>
-    function calcular() {
-      let base = parseFloat(document.querySelector("#base").value);
-      let altura = parseFloat(document.querySelector("#altura").value);
-      let opcion = document.querySelector("#opcion").value;
- 
-      let hipotenusa = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
- 
-      if (opcion === "area") {
-        let area = (base * altura) / 2;
-        alert(`si bro ira, el area es ${area.toFixed(2)} cm2`);
-        alert(`viste bro asi se saca el area`);
-      } else if (opcion === "perimetro") {
-        let perimetro = base + altura + hipotenusa;
-        alert(`si bro ira, el perimetro es ${perimetro.toFixed(2)} cm`);
-        alert(`viste bro asi se saca el perimetro`);
-      } else if (opcion === "hipotenusa") {
-        alert(`si bro ira, la hipotenusa es ${hipotenusa.toFixed(2)} cm`);
-        alert(`viste bro asi se saca la hipotenusa`);
-      } else {
-        alert("Selecciona una opcion valida");
+  <head>
+    <title>Figura: Triangulo</title>
+  </head>
+  <body>
+    <h1 id="titulo">Triangulo</h1>
+    <script>
+      console.log("HOLA");
+      class Triangulo {
+        #area = 0;
+        #perimetro = 0;
+        #base = 0;
+        #altura = 0;
+        constructor(base, altura) {
+          this.#base = base;
+          this.#altura = altura;
+        }
+        calcularArea() {
+          this.#area = (this.#base * this.#altura) / 2;
+          return this.#area;
+        }
+        calcularPerimetro() {
+          // Implementación del cálculo del perímetro
+          this.#perimetro = this.#base * 3; // Asumiendo un triángulo equilátero
+          return this.#perimetro;
+        }
       }
-    }
-  </script>
-</body>
+      const triangulo = new Triangulo(3, 4);
+      const area = triangulo.calcularArea();
+      const perimetro = triangulo.calcularPerimetro();
+    </script>
+  </body>
 </html>
  

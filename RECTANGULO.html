@@ -1,43 +1,33 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>RECTANGULO</title>
-</head>
-<body>
-  <h1 id="titulo">SACAR AREA Y PERIMETRO DE UN RECTANGULO</h1>
- 
-  <!-- Entrada para la base -->
-  <input id="base" type="text" placeholder="Escribe la base bro" value="">
-  <!-- Entrada para la altura -->
-  <input id="altura" type="text" placeholder="Escribe la altura bro" value="">
- 
-  <!-- Selector para elegir que calcular -->
-  <select id="opcion">
-    <option value="area">AREA</option>
-    <option value="perimetro">PERIMETRO</option>
-  </select>
- 
-  <!-- Boton para ejecutar -->
-  <input type="button" onclick="calcular()" value="Calcular">
- 
-  <script>
-    function calcular() {
-      let base = parseFloat(document.querySelector("#base").value);
-      let altura = parseFloat(document.querySelector("#altura").value);
-      let opcion = document.querySelector("#opcion").value;
- 
-      if (opcion === "area") {
-        let area = base * altura;
-        alert(`si bro ira, el area es ${area.toFixed(2)} cm2`);
-        alert(`viste bro asi se saca el area`);
-      } else if (opcion === "perimetro") {
-        let perimetro = 2 * (base + altura);
-        alert(`si bro ira, el perimetro es ${perimetro.toFixed(2)} cm`);
-        alert(`viste bro asi se saca el perimetro`);
-      } else {
-        alert("Selecciona una opcion valida");
+  <head>
+    <title>Figura: Rectangulo</title>
+  </head>
+  <body>
+    <h1 id="titulo">Rectangulo</h1>
+    <script>
+      console.log("HOLA");
+      class Rectangulo {
+        #area = 0;
+        #perimetro = 0;
+        #base = 0;
+        #altura = 0;
+        constructor(base, altura) {
+          this.#base = base;
+          this.#altura = altura;
+        }
+        calcularArea() {
+          this.#area = this.#base * this.#altura;
+          return this.#area;
+        }
+        calcularPerimetro() {
+          this.#perimetro = 2 * (this.#base + this.#altura);
+          return this.#perimetro;
+        }
       }
-    }
-  </script>
-</body>
+      const rectangulo = new Rectangulo(3, 4);
+      const area = rectangulo.calcularArea();
+      const perimetro = rectangulo.calcularPerimetro();
+    </script>
+  </body>
 </html>
+ 

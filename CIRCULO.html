@@ -1,44 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>CIRCULO</title>
-</head>
-<body>
-  <h1 id="titulo">SACAR AREA Y PERIMETRO DE UN CIRCULO</h1>
-  
-  <!-- Entrada para el radio -->
-  <input id="radio" type="text" placeholder="Escribe valor del radio bro" value="">
-  
-  <!-- Selector para elegir qué calcular -->
-  <select id="opcion">
-    <option value="area">AREA</option>
-    <option value="perimetro">PERIMETRO</option>
-  </select>
-  
-  <!-- Botón para ejecutar -->
-  <input type="button" onclick="calcular()" value="Calcular">
-
-  <script>
-    function calcular() {
-      let radio = parseFloat(document.querySelector("#radio").value);
-      let opcion = document.querySelector("#opcion").value;
-
-      if (opcion === "area") {
-        let area = Math.PI * Math.pow(radio, 2);
-        alert(`Si bro ira, el area es ${area.toFixed(2)} cm`)
-        alert(`Viste bro, asi se saca el area`);
-      } else if (opcion === "perimetro") {
-        let perimetro = 2 * Math.PI * radio;
-        alert(`Si bro ira, el perimetro es ${perimetro.toFixed(2)} cm^2`)
-        alert(`Viste bro, asi se saca el perimetro`);
-      } else {
-        alert("Selecciona una opción válida");
-      }
-    }
-  </script>
-</body>
+<html>        
+  <head>        
+    <title>Figura: Circulo</title>        
+  </head>        
+  <body>        
+    <h1 id="titulo">Circulo</h1>        
+    <script>        
+      console.log("HOLA");        
+      class Circulo {  
+        #area = 0;     
+        #perimetro = 0;                
+        #radio = 0;        
+        constructor(radio) {        
+          this.#radio = radio;        
+        }        
+        calcularArea() {        
+          this.#area = Math.PI * this.#radio * this.#radio;        
+          return this.#area;        
+        }        
+        calcularPerimetro() {        
+          this.#perimetro = 2 * Math.PI * this.#radio;        
+          return this.#perimetro;        
+        }        
+      }        
+      const circulo = new Circulo(5);        
+      const area = circulo.calcularArea();        
+      const perimetro = circulo.calcularPerimetro();        
+    </script>        
+  </body>        
 </html>
-
-
-
-
+ 
